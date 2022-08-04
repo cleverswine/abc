@@ -35,3 +35,4 @@ yarn-error.log
 
 # End of https://www.toptal.com/developers/gitignore/api/dotnetcore,vuejs,hugo
 
+app/data/
