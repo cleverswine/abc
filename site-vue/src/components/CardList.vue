@@ -1,7 +1,6 @@
 <script>
 import rssItems from "@/assets/data/rss.json";
-import CardItem from "./CardItem.vue";
-import Masonry from "masonry-layout";
+import VueMasonryWall from "@yeger/vue-masonry-wall";
 
 export default {
   data() {
@@ -9,29 +8,27 @@ export default {
       cardItems: rssItems,
     };
   },
-  components: { CardItem },
-  mounted() {
-    // initialize masonry
-    var row = document.querySelector("[data-masonry]");
-    new Masonry(row, {
-      // options
-      percentPosition: true,
-    });
-  },
+  components: { VueMasonryWall },
 };
 </script>
 
 <template>
-  <div
-    class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"
-    data-masonry='{"percentPosition": true }'
-  >
-    <div class="col" v-for="item in cardItems" v-bind:key="item.ImageUrl">
-      <CardItem
-        :img="item.ImageName"
-        v-bind:title="item.Title"
-        v-bind:link="item.Link"
-      ></CardItem>
-    </div>
-  </div>
+  <vue-masonry-wall :items="cardItems" :gap="10" :column-width="300">
+    <template v-slot:default="{ item }">
+      <div class="item">
+        <div class="card shadow-sm">
+          <a :href="item.Link">
+            <img
+              :src="`/images/` + item.ImageName"
+              class="card-img-top img-fluid"
+              :alt="item.Title"
+            />
+          </a>
+          <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">{{ item.Title }}</h6>
+          </div>
+        </div>
+      </div>
+    </template>
+  </vue-masonry-wall>
 </template>
