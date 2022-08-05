@@ -17,7 +17,7 @@ export default {
     <template v-slot:default="{ item }">
       <div class="item">
         <div class="card shadow-sm">
-          <a :href="item.Link">
+          <a :href="item.SourceLink">
             <img
               :src="`/images/` + item.ImageName"
               class="card-img-top img-fluid"
