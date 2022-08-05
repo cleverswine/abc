@@ -22,25 +22,12 @@ import CardList from "./components/CardList.vue";
             Almost all items can be customized. I love working with customers to
             create something unique and personal.
           </p>
-          <p>
-            <button
-              type="button"
-              class="btn rounded-circle btn-outline-secondary me-2"
+          <p class="lead">
+            <a
+              href="https://www.etsy.com/shop/AuntieBooCrafts"
+              style="color: #00567b"
+              >Visit my shop on Etsy</a
             >
-              <i class="fa-brands fa-etsy"></i>
-            </button>
-            <button
-              type="button"
-              class="btn rounded-circle btn-outline-secondary me-2"
-            >
-              <i class="fa-brands fa-facebook-f"></i>
-            </button>
-            <button
-              type="button"
-              class="btn rounded-circle btn-outline-secondary"
-            >
-              <i class="fa-brands fa-tiktok"></i>
-            </button>
           </p>
         </div>
       </div>
@@ -60,10 +47,30 @@ import CardList from "./components/CardList.vue";
 
   <footer class="text-muted py-5">
     <div class="container">
-      <p class="float-end mb-1">
-        <a href="#" style="color: #00567b">Back to top</a>
-      </p>
-      <p class="mb-1">Copyright Auntie Boo Crafts 2022</p>
+      <div class="row">
+        <div class="col-xs-12 col-md-4 text-sm-center text-md-start">
+          &#169; Auntie Boo Crafts 2022
+        </div>
+        <div class="col-xs-12 col-md-4 text-sm-center text-md-center">
+          <button
+            href="https://www.etsy.com/shop/AuntieBooCrafts"
+            type="button"
+            class="btn rounded-circle btn-outline-secondary me-2"
+          >
+            <i class="fa-brands fa-etsy"></i>
+          </button>
+          <button
+            href="https://www.etsy.com/shop/auntieboocrafts/rss"
+            type="button"
+            class="btn rounded-circle btn-outline-secondary me-2"
+          >
+            <i class="fa-solid fa-rss"></i>
+          </button>
+        </div>
+        <div class="col-xs-12 col-md-4 text-sm-center text-md-end">
+          <a href="#" style="color: #00567b">Back to top</a>
+        </div>
+      </div>
     </div>
   </footer>
 </template>
