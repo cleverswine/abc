@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-  <vue-masonry-wall :items="cardItems" :gap="10" :column-width="300">
+  <vue-masonry-wall :items="cardItems" :gap="10" :column-width="400">
     <template v-slot:default="{ item }">
       <div class="item">
         <div class="card shadow-sm">
@@ -24,8 +24,8 @@ export default {
               :alt="item.Title"
             />
           </a>
-          <div class="card-body">
-            <h6 class="card-subtitle mb-2 text-muted">{{ item.Title }}</h6>
+          <div class="card-footer text-muted">
+            {{ item.Title }}
           </div>
         </div>
       </div>
