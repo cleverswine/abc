@@ -16,7 +16,7 @@ import CardList from "./components/CardList.vue";
             Welcome to Auntie Boo Crafts!
           </p>
           <p class="text-muted">
-            I'm passionate about creating handcrafted and personalized items . I
+            I'm passionate about creating handcrafted and personalized items. I
             specialize in tumblers, mugs, glitter pens, key chains, badge reels,
             phone grips and bag charms. I have something for every price point.
             Almost all items can be customized. I love working with customers to
