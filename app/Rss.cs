@@ -60,7 +60,8 @@ public class Rss
 
     public async Task SaveImage(RssItem item, string path)
     {
-        if (File.Exists(item.ImageName)) return;
+        if (File.Exists($"{path}/{item.ImageName}")) return;
+        Console.WriteLine($"getting and saving image {item.ImageUrl}");
         var img = await _httpClient.GetByteArrayAsync(item.ImageUrl);
         File.WriteAllBytes($"{path}/{item.ImageName}", img);
     }

@@ -6,7 +6,7 @@
 var basePath = args[0];
 var dataFileName = Path.Combine(basePath, "src/assets/data/rss.json");
 var imgPath = Path.Combine(basePath, "public/images");
-Console.WriteLine($"dataPath={dataFileName} / imgPath={imgPath}");
+Console.WriteLine($"dataPath={dataFileName} | imgPath={imgPath}");
 
 var rss = new Rss(new HttpClient());
 var remoteItems = await rss.Get(new Uri("https://www.etsy.com/shop/auntieboocrafts/rss"));

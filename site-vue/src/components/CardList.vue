@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-  <vue-masonry-wall :items="cardItems" :gap="10" :column-width="400">
+  <vue-masonry-wall :items="cardItems" :gap="16" :column-width="300">
     <template v-slot:default="{ item }">
       <div class="item">
         <div class="card shadow-sm">
