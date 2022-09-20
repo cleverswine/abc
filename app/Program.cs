@@ -4,6 +4,7 @@
 }
 
 var basePath = args[0];
+var itemsToDisplay = 12;
 var dataFileName = Path.Combine(basePath, "src/assets/data/rss.json");
 var imgPath = Path.Combine(basePath, "public/images");
 Console.WriteLine($"dataPath={dataFileName} | imgPath={imgPath}");
@@ -24,4 +25,14 @@ foreach (var remoteItem in remoteItems)
     await rss.SaveImage(remoteItem, imgPath);
 }
 
-await rss.SaveAll(localItems.OrderByDescending(x => x.PubDate), dataFileName);
+var toDisplay = localItems.OrderByDescending(x => x.PubDate).Take(itemsToDisplay);
+await rss.SaveAll(toDisplay, dataFileName);
+
+Directory.EnumerateFiles(imgPath).ToList().ForEach(fn =>
+{
+    if (!toDisplay.Any(i => i.ImageName == fn.Split("/").Last()))
+    {
+        Console.WriteLine($"removing unused image {fn}");
+        File.Delete(fn);
+    }
+});

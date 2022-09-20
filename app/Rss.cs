@@ -48,7 +48,7 @@ public class Rss
 
             result.Add(new RssItem
             {
-                Title = title.Replace("by AuntiBooCrafts", ""),
+                Title = title.Split(",").First(),
                 ImageUrl = img,
                 ImageName = img.Split('/').Last(),
                 SourceLink = link,
