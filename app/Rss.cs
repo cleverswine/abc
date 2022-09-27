@@ -3,6 +3,7 @@ using System.Xml;
 
 public class RssItem
 {
+    public int Weight { get; set; } = 99;
     public string Title { get; set; }
     public string ImageUrl { get; set; }
     public string ImageName { get; set; }

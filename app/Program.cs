@@ -15,17 +15,25 @@ var localItems = (await rss.Get(dataFileName)).ToList();
 
 foreach (var remoteItem in remoteItems)
 {
-    if (!localItems.Exists(x => x.ImageUrl == remoteItem.ImageUrl))
+    var localItem = localItems.FirstOrDefault(x => x.ImageUrl == remoteItem.ImageUrl);
+    if (localItem == null)
     {
         Console.WriteLine("adding new item: ");
         Console.WriteLine(remoteItem.Title);
         localItems.Add(remoteItem);
     }
+    else
+    {
+        localItem.Title = remoteItem.Title;
+    }
 
     await rss.SaveImage(remoteItem, imgPath);
 }
 
-var toDisplay = localItems.OrderByDescending(x => x.PubDate).Take(itemsToDisplay);
+var toDisplay = localItems
+    .OrderBy(x => x.Weight)
+    .ThenByDescending(x => x.PubDate)
+    .Take(itemsToDisplay);
 await rss.SaveAll(toDisplay, dataFileName);
 
 Directory.EnumerateFiles(imgPath).ToList().ForEach(fn =>
