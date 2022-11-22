@@ -74,6 +74,7 @@ public class Rss
             if (File.Exists(fileName + ".bk")) File.Delete(fileName + ".bk");
             File.Copy(fileName, fileName + ".bk");
         }
-        await File.WriteAllTextAsync($"{fileName}", JsonSerializer.Serialize(items));
+        
+        await File.WriteAllTextAsync($"{fileName}", JsonSerializer.Serialize(items, new JsonSerializerOptions{WriteIndented = true}));
     }
 }
