@@ -4,7 +4,7 @@
 }
 
 var basePath = args[0];
-var itemsToDisplay = 12;
+var itemsToDisplay = 16;
 var dataFileName = Path.Combine(basePath, "src/assets/data/rss.json");
 var imgPath = Path.Combine(basePath, "public/images");
 Console.WriteLine($"dataPath={dataFileName} | imgPath={imgPath}");
