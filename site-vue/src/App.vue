@@ -52,20 +52,22 @@ import CardList from "./components/CardList.vue";
           &#169; Auntie Boo Crafts 2022
         </div>
         <div class="col-xs-12 col-md-4 text-sm-center text-md-center">
-          <button
+          <a
             href="https://www.etsy.com/shop/AuntieBooCrafts"
+            target="_blank"
             type="button"
             class="btn rounded-circle btn-outline-secondary me-2"
           >
             <i class="fa-brands fa-etsy"></i>
-          </button>
-          <button
+        </a>
+          <a
             href="https://www.etsy.com/shop/auntieboocrafts/rss"
+            target="_blank"
             type="button"
             class="btn rounded-circle btn-outline-secondary me-2"
           >
             <i class="fa-solid fa-rss"></i>
-          </button>
+        </a>
         </div>
         <div class="col-xs-12 col-md-4 text-sm-center text-md-end">
           <a href="#" style="color: #00567b">Back to top</a>
